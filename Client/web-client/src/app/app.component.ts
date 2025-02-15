@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'web-client';
-}
+  isIframe = false;
 
+  constructor(
+  ) {
+    
+  }
+  
+  ngOnInit(): void {
+    this.isIframe = window !== window.parent && !window.opener;
+  }
+}

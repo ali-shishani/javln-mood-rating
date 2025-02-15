@@ -30,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('web-client app is running!');
+    expect(compiled.querySelector('.app-header-title')?.textContent).toContain('The mood rating app');
   });
 });

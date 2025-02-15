@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # npm packages lock json file
 /Client/web-client/package-lock.json
+/package-lock.json

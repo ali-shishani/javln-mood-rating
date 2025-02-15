@@ -16,4 +16,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InterviewProjectTemplate.Config\InterviewProjectTemplate.Config.csproj" />
+    <ProjectReference Include="..\InterviewProjectTemplate.Models\InterviewProjectTemplate.Models.csproj" />
+    <ProjectReference Include="..\InterviewProjectTemplate.Services\InterviewProjectTemplate.Services.csproj" />
+  </ItemGroup>
+
 </Project>

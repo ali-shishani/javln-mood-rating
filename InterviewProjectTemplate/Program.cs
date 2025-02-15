@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using InterviewProjectTemplate.Config.Provider;
 
 namespace InterviewProjectTemplate
 {
@@ -8,17 +9,16 @@ namespace InterviewProjectTemplate
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var hostEnv = builder.Environment;
+            var configuration = builder.Configuration;
 
-            // Add services to the container.
-            builder.Services.AddCors(o => o.AddDefaultPolicy(builder =>
-                builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader()));
+            configuration
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .AddCommandLine(args);
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            var startup = new Startup(configuration, hostEnv);
+            startup.ConfigureServices(builder.Services);
 
             var app = builder.Build();
 

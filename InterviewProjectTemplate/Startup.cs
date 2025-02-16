@@ -1,4 +1,7 @@
-﻿using InterviewProjectTemplate.Services.Mood;
+﻿using InterviewProjectTemplate.Config.Provider;
+using InterviewProjectTemplate.Data;
+using InterviewProjectTemplate.Repositories;
+using InterviewProjectTemplate.Services.Mood;
 using System.Configuration;
 
 namespace InterviewProjectTemplate
@@ -26,6 +29,10 @@ namespace InterviewProjectTemplate
             //var provider = services.BuildServiceProvider();
 
             // Add services to the container.
+            services.AddSingleton<IAppConfigurationProvider, AppConfigurationProvider>();
+            services.AddScoped<MoodRatingDbContext>();
+            services.AddDbContext<MoodRatingDbContext>();
+
             services.AddCors(o => o.AddDefaultPolicy(builder =>
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
@@ -50,7 +57,8 @@ namespace InterviewProjectTemplate
 
         private void RegisterRepositories(IServiceCollection services)
         {
-            // TODO: Register repositories
+            // register repositories
+            services.AddScoped<IMoodRatingRecordRepository, MoodRatingRecordRepository>();
         }
     }
 }

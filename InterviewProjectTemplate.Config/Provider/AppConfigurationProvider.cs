@@ -18,7 +18,7 @@ namespace InterviewProjectTemplate.Config.Provider
 
         public string GetConnectionString()
         {
-            return _configuration["MySQLConnectionString"];
+            return _configuration["ConnectionStrings:MySQLConnectionString"];
         }
     }
 }

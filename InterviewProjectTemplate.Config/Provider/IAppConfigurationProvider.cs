@@ -8,6 +8,6 @@ namespace InterviewProjectTemplate.Config.Provider
 {
     public interface IAppConfigurationProvider
     {
-
+        string GetConnectionString();
     }
 }

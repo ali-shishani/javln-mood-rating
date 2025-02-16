@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\InterviewProjectTemplate.Config\InterviewProjectTemplate.Config.csproj" />
-    <ProjectReference Include="..\InterviewProjectTemplate.Data\InterviewProjectTemplate.Data.csproj" />
-    <ProjectReference Include="..\InterviewProjectTemplate.Models\InterviewProjectTemplate.Models.csproj" />
-    <ProjectReference Include="..\InterviewProjectTemplate.Repositories\InterviewProjectTemplate.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

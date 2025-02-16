@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Models", "InterviewProjectTemplate.Models\InterviewProjectTemplate.Models.csproj", "{D7EF5187-BBBB-4FA7-B722-0D60E3273B81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Repositories", "InterviewProjectTemplate.Repositories\InterviewProjectTemplate.Repositories.csproj", "{E1B76F90-5737-4D73-8DA6-38DD0D67751A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Data", "InterviewProjectTemplate.Data\InterviewProjectTemplate.Data.csproj", "{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{D7EF5187-BBBB-4FA7-B722-0D60E3273B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7EF5187-BBBB-4FA7-B722-0D60E3273B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7EF5187-BBBB-4FA7-B722-0D60E3273B81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1B76F90-5737-4D73-8DA6-38DD0D67751A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1B76F90-5737-4D73-8DA6-38DD0D67751A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1B76F90-5737-4D73-8DA6-38DD0D67751A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1B76F90-5737-4D73-8DA6-38DD0D67751A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

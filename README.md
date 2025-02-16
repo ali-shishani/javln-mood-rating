@@ -17,7 +17,11 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [ ] Implement front-end unit test - Mood Rating Recording.
 - [ ] Implement Login - this is to prepare for the admin user access.
 - [ ] Customise front-end routing for admin and create an initial landing page.
-- [ ] TODO: TBD
+- [ ] Implement back-end Mood Rating Controller Action to retriev Mood Rating Records - sorted by most recent.
+- [ ] Implement back-end unit test - admin should be able to retrieve the records sorted by most recent.
+- [ ] Implement front-end admin view UI design.
+- [ ] Implement front-end admin view unit test.
+- [ ] TODO: TBD.
 
 
 # InterviewProjectTemplate

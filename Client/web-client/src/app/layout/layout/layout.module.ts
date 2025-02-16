@@ -6,7 +6,9 @@ import { routes } from './layout.routing';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
-  declarations: [LayoutComponent],
+  declarations: [
+    LayoutComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

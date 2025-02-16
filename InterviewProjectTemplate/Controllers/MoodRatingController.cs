@@ -1,8 +1,10 @@
-﻿using InterviewProjectTemplate.Models.Mood;
+﻿using InterviewProjectTemplate.Models;
+using InterviewProjectTemplate.Models.Mood;
 using InterviewProjectTemplate.Services.Mood;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace InterviewProjectTemplate.Controllers
 {
@@ -23,20 +25,29 @@ namespace InterviewProjectTemplate.Controllers
         }
 
         [HttpGet("GetMoodRatingOptions")]
-        public async Task<ActionResult<IEnumerable<GetMoodRatingOptionsResponse>>> GetMoodRatingOptions()
+        public async Task<ApiResponse<GetMoodRatingOptionsResponse>> GetMoodRatingOptions()
         {
             _logger.LogInformation("User is trying to get the mood rating page options");
-            var result = await _moodRatingService.GetMoodRatingOptions();
-            return Ok(result);
+            var (result, errors) = await _moodRatingService.GetMoodRatingOptions();
+
+            return new ApiResponseBuilder<GetMoodRatingOptionsResponse>()
+                .WithErrors(errors)
+                .WithData(result)
+                .WithHttpStatus(Response, HttpStatusCode.OK)
+                .Build();
         }
 
         [HttpPost("RecordMoodRating")]
-        public async Task<ActionResult<RecordMoodRatingResponse>> RecordMoodRating(RecordMoodRatingRequest request)
+        public async Task<ApiResponse<RecordMoodRatingResponse>> RecordMoodRating(RecordMoodRatingRequest request)
         {
             _logger.LogInformation("User is trying to record the mood rating");
-            var result = await _moodRatingService.RecordMoodRating(request);
-            var url = $"{Request.GetDisplayUrl()}/{result.Id}";
-            return Created(url, result);
+            var (result, errors) = await _moodRatingService.RecordMoodRating(request);
+
+            return new ApiResponseBuilder<RecordMoodRatingResponse>()
+                .WithErrors(errors)
+                .WithData(result)
+                .WithHttpStatus(Response, HttpStatusCode.OK)
+                .Build();
         }
     }
 }

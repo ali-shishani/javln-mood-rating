@@ -1,4 +1,5 @@
-﻿using InterviewProjectTemplate.Models.Mood;
+﻿using InterviewProjectTemplate.Models;
+using InterviewProjectTemplate.Models.Mood;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace InterviewProjectTemplate.Services.Mood
 {
     public interface IMoodRatingService
     {
-        Task<GetMoodRatingOptionsResponse> GetMoodRatingOptions();
-        Task<RecordMoodRatingResponse> RecordMoodRating(RecordMoodRatingRequest request);
+        Task<(GetMoodRatingOptionsResponse, List<Error> errors)> GetMoodRatingOptions();
+        Task<(RecordMoodRatingResponse, List<Error> errors)> RecordMoodRating(RecordMoodRatingRequest request);
     }
 }

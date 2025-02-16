@@ -2,7 +2,10 @@
 import { Error } from "./error.models";
 
 export enum MoodRatingOption {
-    Good = 1
+    NotGoodAtAll = 1,
+    AbitMeh = 2,
+    PrettyGood = 3,
+    FeelingGreat = 4,
 }
 
 export interface GetMoodRatingOptionsResponse {

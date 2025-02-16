@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace InterviewProjectTemplate.Data
 {
-    public class MoodRatingDbContext//: DbContext
+    public class MoodRatingDbContext
     : IdentityDbContext<
     ApplicationUser, ApplicationRole, Guid,
     ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin,
@@ -26,7 +26,7 @@ namespace InterviewProjectTemplate.Data
         }
 
         // add your entities here
-        //public DbSet<MoodRatingRecord> MoodRatingRecords { get; set; }
+        public DbSet<MoodRatingRecord> MoodRatingRecords { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -43,10 +43,6 @@ namespace InterviewProjectTemplate.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<MoodRatingRecord>().Property(h => h.Id)
-            //    .IsUnicode(true)
-            //    .HasMaxLength(36)
-            //    .IsRequired();
         }
     }
 }

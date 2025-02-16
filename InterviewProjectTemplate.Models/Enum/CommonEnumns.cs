@@ -8,6 +8,9 @@ namespace InterviewProjectTemplate.Models.Enum
 {
     public enum MoodRatingOption
     {
-        Good = 1,
+        NotGoodAtAll = 1,
+        AbitMeh = 2,
+        PrettyGood = 3,
+        FeelingGreat = 4,
     }
 }

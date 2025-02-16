@@ -11,9 +11,15 @@ namespace InterviewProjectTemplate.Models.Mood
     {
         public GetMoodRatingOptionsResponse()
         {
-            MoodRatingOptions = new List<MoodRatingOption>();
+            MoodRatingOptions = new List<MoodRatingOptionResponse>();
+
+            var values = System.Enum.GetValues(typeof(MoodRatingOption)).Cast<MoodRatingOption>(); ;
+            foreach (var value in values) 
+            {
+                MoodRatingOptions.Add(new MoodRatingOptionResponse(value));
+            }
         }
 
-        public List<MoodRatingOption> MoodRatingOptions { get; set; }
+        public List<MoodRatingOptionResponse> MoodRatingOptions { get; set; }
     }
 }

@@ -8,6 +8,6 @@ namespace InterviewProjectTemplate.Models.Mood
 {
     public class RecordMoodRatingResponse
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

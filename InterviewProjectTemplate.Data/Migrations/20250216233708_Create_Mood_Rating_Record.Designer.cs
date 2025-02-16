@@ -3,6 +3,7 @@ using System;
 using InterviewProjectTemplate.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InterviewProjectTemplate.Data.Migrations
 {
     [DbContext(typeof(MoodRatingDbContext))]
-    partial class MoodRatingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250216233708_Create_Mood_Rating_Record")]
+    partial class Create_Mood_Rating_Record
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

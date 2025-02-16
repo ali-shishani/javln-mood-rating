@@ -1,3 +1,29 @@
+Hi,
+
+This is a message from me to help you keep tracking of the progress. The list below represents the planned tasks until reaching MVP.
+- [x] Update Angular from 15 to 18.
+- [x] Add front-end routing, layout, and home.
+- [x] Implement front-end HttpClient/requests/url and wire it to configurations.
+- [x] Restructure back-end solution to apply Domain Driven Design - DDD.
+- [x] Implement App Config provider and organise DI.
+- [x] Implement back-end MySql Database/ORM and wire it to configuration.
+- [x] Implement .Net Core Identity/authentication/authorizattion - this to prepare for special permission of admin user.
+- [x] Implement Mood Rating Mock-up Controller Actions, Service, Repository. Test connection between fron and back ends. - this is to prepare for the business requirement implementation.
+- [x] Customise HttpResponses by wrapping it in a standard model to unify standards of error handling and friendly messages to the user.
+- [ ] Implement seeding for user,roles, claims...etc
+- [ ] Implement UI Design to help users submit a mood rating. The user will fill an email address and select a rating of his/her mood.
+- [ ] Implement back-end logic to store user's mood rating. Also add validation to prevent multiple submit actions in the same day.
+- [ ] Implement back-end unit test - Mood Rating Recording.
+- [ ] Implement front-end unit test - Mood Rating Recording.
+- [ ] Implement Login - this is to prepare for the admin user access.
+- [ ] Customise front-end routing for admin and create an initial landing page.
+- [ ] Implement back-end Mood Rating Controller Action to retriev Mood Rating Records - sorted by most recent.
+- [ ] Implement back-end unit test - admin should be able to retrieve the records sorted by most recent.
+- [ ] Implement front-end admin view UI design.
+- [ ] Implement front-end admin view unit test.
+- [ ] TODO: TBD.
+
+
 # InterviewProjectTemplate
 
 ## Project Structure

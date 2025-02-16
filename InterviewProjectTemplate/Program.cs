@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using InterviewProjectTemplate.Config.Provider;
+using InterviewProjectTemplate.Data.Entity;
 
 namespace InterviewProjectTemplate
 {
@@ -33,7 +34,8 @@ namespace InterviewProjectTemplate
 
             app.UseCors();
 
-            app.UseAuthorization();
+            //app.UseAuthorization(); TODO: clean-up / this is moved to startup.
+            app.MapIdentityApi<ApplicationUser>();
 
             app.MapControllers();
 

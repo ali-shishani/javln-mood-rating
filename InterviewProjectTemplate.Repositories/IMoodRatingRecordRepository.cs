@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InterviewProjectTemplate.Repositories
 {
-    public interface IMoodRatingRecordRepository : IGenericRepository<MoodRatingRecord>
+    public interface IMoodRatingRecordRepository : IGenericRepository<ApplicationRole>
     {
     }
 }

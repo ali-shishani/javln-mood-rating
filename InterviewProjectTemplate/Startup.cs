@@ -1,7 +1,9 @@
 ﻿using InterviewProjectTemplate.Config.Provider;
 using InterviewProjectTemplate.Data;
+using InterviewProjectTemplate.Data.Entity;
 using InterviewProjectTemplate.Repositories;
 using InterviewProjectTemplate.Services.Mood;
+using Microsoft.AspNetCore.Identity;
 using System.Configuration;
 
 namespace InterviewProjectTemplate
@@ -32,6 +34,19 @@ namespace InterviewProjectTemplate
             services.AddSingleton<IAppConfigurationProvider, AppConfigurationProvider>();
             services.AddScoped<MoodRatingDbContext>();
             services.AddDbContext<MoodRatingDbContext>();
+
+            // add authenication
+            services.AddAuthentication()
+                .AddCookie(IdentityConstants.ApplicationScheme)
+                .AddBearerToken(IdentityConstants.BearerScheme);
+
+            // add authorisation
+            services.AddAuthorization();
+
+            // add identity core
+            services.AddIdentityCore<ApplicationUser>()
+                .AddEntityFrameworkStores<MoodRatingDbContext>()
+                .AddApiEndpoints();
 
             services.AddCors(o => o.AddDefaultPolicy(builder =>
                 builder.AllowAnyOrigin()

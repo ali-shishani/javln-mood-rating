@@ -16,7 +16,7 @@ namespace InterviewProjectTemplate.Data
     ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin,
     ApplicationRoleClaim, ApplicationUserToken>
     {
-        static string connectionString = "mysql-db;Port=3306;Database=moodtrackerdb;Uid=app;Pwd=password";
+        static string connectionString = "";
         private readonly IAppConfigurationProvider _appConfigurationProvider;
 
         public MoodRatingDbContext(IAppConfigurationProvider appConfigurationProvider) : base()

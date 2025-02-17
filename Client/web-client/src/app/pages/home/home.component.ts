@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetMoodRatingOptionsResponse, MoodRatingOption } from '../../core/models/mood.rating.models';
+import { GetMoodRatingOptionsResponse, MoodRatingOptionCode, MoodRatingOption, } from '../../core/models/mood.rating.models';
 import { MoodRatingService } from './mood-rating.service';
 
 @Component({
@@ -24,7 +24,7 @@ constructor(
 
   initialise(): void{
     void this.moodRatingService.getMoodRatingOptions().subscribe((data: GetMoodRatingOptionsResponse) => {
-      this.allRatingOptions = data.ratingOptions;
+      this.allRatingOptions = data.moodRatingOptions;
     });
   }
 }

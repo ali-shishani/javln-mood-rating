@@ -61,5 +61,8 @@ namespace InterviewProjectTemplate.Repositories
 
         public void UpdateRange(IEnumerable<T> entities)
             => _dbContext.UpdateRange(entities);
+
+        public void SaveChanges()
+            => _dbContext.SaveChanges();
     }
 }

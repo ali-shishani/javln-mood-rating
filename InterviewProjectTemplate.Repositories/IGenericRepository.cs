@@ -36,5 +36,7 @@ namespace InterviewProjectTemplate.Repositories
         Task AddAsync(T entity, CancellationToken cancellationToken = default);
 
         Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
+
+        void SaveChanges();
     }
 }

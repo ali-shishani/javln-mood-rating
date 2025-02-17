@@ -1,5 +1,7 @@
 ﻿using InterviewProjectTemplate.Config.Provider;
+using InterviewProjectTemplate.Data.Entity;
 using InterviewProjectTemplate.Models;
+using InterviewProjectTemplate.Models.Constant;
 using InterviewProjectTemplate.Models.Mood;
 using InterviewProjectTemplate.Repositories;
 using Microsoft.Extensions.Logging;
@@ -28,11 +30,7 @@ namespace InterviewProjectTemplate.Services.Mood
             var result = new GetMoodRatingOptionsResponse();
             var errors = new List<Error>();
 
-            var allMoodRatingRecords = await _moodRatingRepository.GetAllAsync();
-
-            // TODO: implement logic
-
-            return (result, errors);
+            return await  Task.FromResult( (result, errors));
         }
 
 
@@ -41,9 +39,28 @@ namespace InterviewProjectTemplate.Services.Mood
             var result = new RecordMoodRatingResponse();
             var errors = new List<Error>();
 
-            // TODO: implement logic
+            var allMoodRatingRecords = await _moodRatingRepository.GetAllAsync();
+            var currentDateUtc = new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, DateTime.UtcNow.Day);
+            if (allMoodRatingRecords.Any(s => s.Email == request.Email && s.CreatedDateUtc == currentDateUtc))
+            {
+                errors.Add(Error.InvalidRequestError(ErrorConstants.InvalidRequestInputCode, "You already rated your mood today!"));
+                return (result, errors);
+            }
 
-            return (result, errors);
+            var newRecord = new MoodRatingRecord()
+            {
+                Id = Guid.NewGuid(),
+                Email = request.Email,
+                CreatedDateUtc = currentDateUtc,
+                Rating =  (int)request.Rating,
+                Comment = request.Comment
+            };
+
+            _moodRatingRepository.Add(newRecord);
+            _moodRatingRepository.SaveChanges();
+            result.Id = newRecord.Id;
+
+            return await Task.FromResult((result, errors));
         }
     }
 }

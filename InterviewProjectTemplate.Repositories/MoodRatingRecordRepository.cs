@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InterviewProjectTemplate.Repositories
 {
-    public class MoodRatingRecordRepository : GenericRepository<ApplicationRole>, IMoodRatingRecordRepository
+    public class MoodRatingRecordRepository : GenericRepository<MoodRatingRecord>, IMoodRatingRecordRepository
     {
         public MoodRatingRecordRepository(MoodRatingDbContext dbContext) : base(dbContext)
         {

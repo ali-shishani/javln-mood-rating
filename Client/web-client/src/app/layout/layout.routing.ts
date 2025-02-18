@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { LayoutComponent } from './layout.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 

@@ -15,7 +15,7 @@
                     <div class="star-rating-section">
                         <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" >
                             <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)" (mouseover)="onMouseOver(star.id)" (mouseleave)="onMouseLeave(star.id)">
-                                <mat-icon>{{star.icon}}</mat-icon>
+                                <mat-icon class="star-icon-select">{{star.icon}}</mat-icon>
                             </div>
                         </div>
                         <div class="star-rating-text">{{feelingText}}</div>
@@ -56,8 +56,8 @@
                     </div>
                 </div>
                 <div class="user-submit-result-area" *ngIf="isSubmitted">
-                    <p *ngIf="!isAlreadySubmitted">Thank you for recording your mood today! you can leave this page now.</p>
-                    <p *ngIf="isAlreadySubmitted">You already submitted your rating today. Please come back tomorrow.</p>
+                    <p class="submit-result-text" *ngIf="!isAlreadySubmitted">Thank you for recording your mood today! you can leave this page now.</p>
+                    <p class="submit-result-text" *ngIf="isAlreadySubmitted">You already submitted your rating today. Please come back tomorrow.</p>
                 </div>
             </mat-card>
         </div>

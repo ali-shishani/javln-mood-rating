@@ -12,7 +12,7 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [x] Customise HttpResponses by wrapping it in a standard model to unify standards of error handling and friendly messages to the user.
 - [x] Implement back-end end-point logic to provide the front-end the list of mood rating options. This is will be used to populate UI for the user to record how he/she feels.
 - [ ] Implement back-end unit test for the data initialisation end-point.
-- [ ] Implement UI Design to help users submit a mood rating. The user will fill an email address and select a rating of his/her mood + optional comment.
+- [x] Implement UI Design to help users submit a mood rating. The user will fill an email address and select a rating of his/her mood + optional comment.
 - [x] Implement back-end logic to store user's mood rating. Also add validation to prevent multiple submit actions in the same day.
 - [ ] Implement back-end unit test - Mood Rating Recording.
 - [ ] Implement front-end unit test - Mood Rating Recording.
@@ -26,7 +26,11 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [ ] TODO: TBD.
 
 # Screenshots
-<img width="952" alt="image" src="https://github.com/user-attachments/assets/9109cbae-abd6-4269-91c3-14919ee6fef4" />
+
+Record your mood every day:
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/796c21a3-d9dd-434e-b8c0-5897b26bd1f7" />
+
+<img width="952" alt="image" src="https://github.com/user-attachments/assets/78d3c319-a166-4500-8d59-1de610a02990" />
 
 # InterviewProjectTemplate
 

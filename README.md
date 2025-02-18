@@ -11,7 +11,7 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [x] Implement Mood Rating Mock-up Controller Actions, Service, Repository. Test connection between fron and back ends. - this is to prepare for the business requirement implementation.
 - [x] Customise HttpResponses by wrapping it in a standard model to unify standards of error handling and friendly messages to the user.
 - [x] Implement back-end end-point logic to provide the front-end the list of mood rating options. This is will be used to populate UI for the user to record how he/she feels.
-- [ ] Implement back-end unit test for the data initialisation end-point.
+- [x] Implement back-end unit test for the data initialisation end-point.
 - [x] Implement UI Design to help users submit a mood rating. The user will fill an email address and select a rating of his/her mood + optional comment.
 - [x] Implement back-end logic to store user's mood rating. Also add validation to prevent multiple submit actions in the same day.
 - [ ] Implement back-end unit test - Mood Rating Recording.

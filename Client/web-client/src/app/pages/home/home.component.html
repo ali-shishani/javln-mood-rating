@@ -56,7 +56,8 @@
                     </div>
                 </div>
                 <div class="user-submit-result-area" *ngIf="isSubmitted">
-                    <p>Thank you for recording your mood today! you can leave this page now.</p>
+                    <p *ngIf="!isAlreadySubmitted">Thank you for recording your mood today! you can leave this page now.</p>
+                    <p *ngIf="isAlreadySubmitted">You already submitted your rating today. Please come back tomorrow.</p>
                 </div>
             </mat-card>
         </div>

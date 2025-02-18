@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   // todo: implement loading animation
   isLoading: boolean = false;
   isSubmitted: boolean = false;
+  isAlreadySubmitted: boolean = false;
   allRatingOptions: MoodRatingOption[] = [];
   selectedRating = 0;
 
@@ -99,11 +100,13 @@ constructor(
       };
 
       void this.moodRatingService.recordMoodRating(request).subscribe((data: RecordMoodRatingResponse) => {
-        // todo: proper error dialog
+        // todo: implement a proper error dialog
         this.isSubmitted = true;
-        alert((data.alreadyRecorded ? 
-          'You already submitted your rating today. Please come back tomorrow. :)'
-          : 'Great! all done, we recorded your mood today :)' ));
+        this.isAlreadySubmitted = data.alreadyRecorded;
+        if(!data.alreadyRecorded){
+          alert('Great! all done, we recorded your mood today :)');
+        }
+
       }, 
     error => {
       alert(('oops! something went wrong.'));

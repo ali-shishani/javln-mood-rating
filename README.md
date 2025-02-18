@@ -14,7 +14,7 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [x] Implement back-end unit test for the data initialisation end-point.
 - [x] Implement UI Design to help users submit a mood rating. The user will fill an email address and select a rating of his/her mood + optional comment.
 - [x] Implement back-end logic to store user's mood rating. Also add validation to prevent multiple submit actions in the same day.
-- [ ] Implement back-end unit test - Mood Rating Recording.
+- [x] Implement back-end unit test - Mood Rating Recording.
 - [ ] Implement front-end unit test - Mood Rating Recording.
 - [ ] Implement seeding for user,roles, claims...etc
 - [ ] Implement Login - this is to prepare for the admin user access.

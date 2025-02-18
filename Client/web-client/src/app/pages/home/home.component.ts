@@ -101,10 +101,14 @@ constructor(
       void this.moodRatingService.recordMoodRating(request).subscribe((data: RecordMoodRatingResponse) => {
         // todo: proper error dialog
         this.isSubmitted = true;
-        alert((data.isSuccessful ? 
-          'Great! all done, we recorded your mood today :)' 
-          : 'oops! something went wrong.'));
-      });
+        alert((data.alreadyRecorded ? 
+          'You already submitted your rating today. Please come back tomorrow. :)'
+          : 'Great! all done, we recorded your mood today :)' ));
+      }, 
+    error => {
+      alert(('oops! something went wrong.'));
+      console.log(error);
+    });
     }
   }
 

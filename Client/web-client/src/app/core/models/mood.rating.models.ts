@@ -25,8 +25,7 @@ export interface RecordMoodRatingRequest {
 }
 
 export interface RecordMoodRatingResponse {
-    isSuccessful: boolean;
-    rating: MoodRatingOption;
+    alreadyRecorded: boolean;
     errors: Error[];
 }
 

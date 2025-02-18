@@ -10,6 +10,6 @@ namespace InterviewProjectTemplate.Models.Mood
     {
         public Guid Id { get; set; }
 
-        public bool IsSuccessful { get; set; }
+        public bool AlreadyRecorded { get; set; }
     }
 }

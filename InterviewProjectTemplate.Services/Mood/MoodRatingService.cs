@@ -41,9 +41,14 @@ namespace InterviewProjectTemplate.Services.Mood
             var currentDateUtc = new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, DateTime.UtcNow.Day);
 
             var allMoodRatingRecords = await _moodRatingRepository.GetAllAsync();
-            if (allMoodRatingRecords.Any(s => s.Email == request.Email && s.CreatedDateUtc == currentDateUtc))
+
+            // only one record should exist per day
+            var existingRecord = allMoodRatingRecords.FirstOrDefault(s => s.Email == request.Email && s.CreatedDateUtc == currentDateUtc);
+            if (existingRecord != null)
             {
                 errors.Add(Error.InvalidRequestError(ErrorConstants.InvalidRequestInputCode, "You already rated your mood today!"));
+                result.Id = existingRecord.Id;
+                result.AlreadyRecorded = true;
                 return (result, errors);
             }
 
@@ -59,7 +64,6 @@ namespace InterviewProjectTemplate.Services.Mood
             _moodRatingRepository.Add(newRecord);
             _moodRatingRepository.SaveChanges();
             result.Id = newRecord.Id;
-            result.IsSuccessful = true;
 
             return await Task.FromResult((result, errors));
         }

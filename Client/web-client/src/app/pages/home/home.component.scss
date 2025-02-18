@@ -50,8 +50,16 @@
         border-color: red;
       }
     }
-    textarea{
+    .field-comment{
       width: 600px;
-      height: 100px;
+      height: 30px;
     }
+  }
+
+  .field-validation{
+    color: red;
+  }
+
+  .button-section{
+    margin: 20px 20px 20px 20px;
   }

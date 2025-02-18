@@ -11,36 +11,52 @@
                 <p>How are you feeling today?</p>
             </div>
             <mat-card>
-                <div class="star-rating-section">
-                    <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" >
-                        <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)" (mouseover)="onMouseOver(star.id)" (mouseleave)="onMouseLeave(star.id)">
-                            <mat-icon>{{star.icon}}</mat-icon>
+                <div class="user-input-area" *ngIf="!isSubmitted">
+                    <div class="star-rating-section">
+                        <div class="star-rating-container star-rating-animation" fxLayout="row" fxLayoutAlign="start center" >
+                            <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)" (mouseover)="onMouseOver(star.id)" (mouseleave)="onMouseLeave(star.id)">
+                                <mat-icon>{{star.icon}}</mat-icon>
+                            </div>
+                        </div>
+                        <div class="star-rating-text">{{feelingText}}</div>
+                    </div>
+                    <div class="field-section">
+                        <div class="field-container">
+                            <div class="field-label">
+                                Email
+                            </div>
+                            <div class="field-control require">
+                                <input class="field-email" type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                                <div class="field-validation">
+                                    @if (emailFormControl.dirty && emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                                        <mat-error>Please enter a valid email email</mat-error>
+                                    }
+                                    @if (emailFormControl.dirty && emailFormControl.hasError('required')) {
+                                    <mat-error>Email is <strong>required</strong></mat-error>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field-container">
+                            <div class="field-label">
+                                Comment
+                            </div>
+                            <div class="field-control">
+                                <input class="field-comment" matInput [formControl]="commentFormControl" maxlength="256" placeholder="Ex. I need help with...">
+                                <div>
+                                    <mat-hint>{{commentFormControl.value?.length}} / 256</mat-hint>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-section">
+                            <div class="button-continer">
+                                <button mat-raised-button [disabled]="!isValid()" (click)="submit()">Submit</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="star-rating-text">{{feelingText}}</div>
                 </div>
-                <div class="field-section">
-                    <div class="field-container">
-                        <div class="field-label">
-                            Email
-                        </div>
-                        <div class="field-control require">
-                            <input class="field-email" type="email" (value)="{email}"/>
-                        </div>
-                    </div>
-                    <div class="field-container">
-                        <div class="field-label">
-                            Comment
-                        </div>
-                        <div class="field-control">
-                            <textarea class="field-comment" (value)="{comment}"></textarea>
-                        </div>
-                    </div>
-                    <div class="button-section">
-                        <div class="button-continer">
-                            
-                        </div>
-                    </div>
+                <div class="user-submit-result-area" *ngIf="isSubmitted">
+                    <p>Thank you for recording your mood today! you can leave this page now.</p>
                 </div>
             </mat-card>
         </div>

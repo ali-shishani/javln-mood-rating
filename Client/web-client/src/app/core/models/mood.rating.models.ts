@@ -19,7 +19,9 @@ export interface GetMoodRatingOptionsResponse {
 }
 
 export interface RecordMoodRatingRequest {
-    rating: MoodRatingOptionCode;
+    rating: number;
+    email: string;
+    comment: string;
 }
 
 export interface RecordMoodRatingResponse {

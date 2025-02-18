@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {MatIconRegistry, MatIconModule} from '@angular/material/icon';
-import { GetMoodRatingOptionsResponse, MoodRatingOptionCode, MoodRatingOption, } from '../../core/models/mood.rating.models';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+import { GetMoodRatingOptionsResponse, MoodRatingOptionCode, MoodRatingOption, RecordMoodRatingRequest, RecordMoodRatingResponse } from '../../core/models/mood.rating.models';
 import { MoodRatingService } from './mood-rating.service';
 
 @Component({
@@ -9,14 +11,16 @@ import { MoodRatingService } from './mood-rating.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  commentFormControl = new FormControl('');
+
+  // todo: implement loading animation
   isLoading: boolean = false;
+  isSubmitted: boolean = false;
   allRatingOptions: MoodRatingOption[] = [];
-
   selectedRating = 0;
-  email = '';
-  comment = '';
 
-  feelingText = 'Select your mood!';
+  feelingText = 'Rate your mood!';
   stars = [
     {
       id: 1,
@@ -58,22 +62,20 @@ constructor(
   }
 
   isValid(): boolean{
-    // prevent multiple selection
-    if(this.selectedRating === 0 || !this.isValidEmail()){
+    if(this.isSubmitted || this.selectedRating === 0 || !this.isValidEmail()){
       return false;
     }
     return true;
   }
 
   isValidEmail(): boolean{
-    if(this.email && this.email.length > 0){
-      true;
+    if(this.emailFormControl.dirty && this.emailFormControl.valid){
+      return true;
     }
     return false;
   }
 
   selectStar(value: number): void{
-    // prevent multiple selection
     if(this.selectedRating === 0){
       this.stars.filter( (star) => {
         if ( star.id <= value){
@@ -86,6 +88,24 @@ constructor(
     }
 
     this.selectedRating = value;
+  }
+
+  submit(): void{
+    if(this.isValid()){
+      let request: RecordMoodRatingRequest = {
+        rating: this.selectedRating,
+        email: this.emailFormControl.value as string,
+        comment: this.commentFormControl.value as string
+      };
+
+      void this.moodRatingService.recordMoodRating(request).subscribe((data: RecordMoodRatingResponse) => {
+        // todo: proper error dialog
+        this.isSubmitted = true;
+        alert((data.isSuccessful ? 
+          'Great! all done, we recorded your mood today :)' 
+          : 'oops! something went wrong.'));
+      });
+    }
   }
 
   onMouseOver(value: number): void {
@@ -112,7 +132,7 @@ constructor(
 
   onMouseLeave(value: number): void {
     if ( this.selectedRating === 0){
-      this.feelingText = 'Select your mood!';
+      this.feelingText = 'Rate your mood!';
     }
   }
 }

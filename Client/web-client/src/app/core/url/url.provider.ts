@@ -12,5 +12,9 @@ import { apiUrl } from '../settings/app.config';
     getMoodRatingOptionsUrl = (): string => {
       return urlcat(apiUrl || '', '/api/MoodRating/GetMoodRatingOptions');
     }
+
+    recordMoodRatingUrl = (): string => {
+      return urlcat(apiUrl || '', '/api/MoodRating/RecordMoodRating');
+    }
   }
   

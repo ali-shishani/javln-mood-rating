@@ -10,6 +10,11 @@ namespace InterviewProjectTemplate.Models
 {
     public class ApiResponse<T>
     {
+        public ApiResponse()
+        {
+            Errors = new List<Error>();
+        }
+
         public T Data { get; set; }
 
         public IList<Error> Errors { get; set; }

@@ -9,5 +9,7 @@ namespace InterviewProjectTemplate.Models.Mood
     public class RecordMoodRatingResponse
     {
         public Guid Id { get; set; }
+
+        public bool IsSuccessful { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-Hi,
+Good day :)
 
 This is a message from me to help you keep tracking of the progress. The list below represents the planned tasks until reaching MVP.
 - [x] Update Angular from 15 to 18.

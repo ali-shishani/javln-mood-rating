@@ -5,15 +5,17 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewProjectTemplate", "InterviewProjectTemplate\InterviewProjectTemplate.csproj", "{1B8602AE-0D5C-4E25-BD8E-36F6C3F73673}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Config", "InterviewProjectTemplate.Config\InterviewProjectTemplate.Config.csproj", "{D5FB4D8D-906E-4692-9277-39D9F2BBC707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewProjectTemplate.Config", "InterviewProjectTemplate.Config\InterviewProjectTemplate.Config.csproj", "{D5FB4D8D-906E-4692-9277-39D9F2BBC707}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Services", "InterviewProjectTemplate.Services\InterviewProjectTemplate.Services.csproj", "{3BF67A65-4E0A-41B6-BF6C-0EF9216532D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewProjectTemplate.Services", "InterviewProjectTemplate.Services\InterviewProjectTemplate.Services.csproj", "{3BF67A65-4E0A-41B6-BF6C-0EF9216532D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Models", "InterviewProjectTemplate.Models\InterviewProjectTemplate.Models.csproj", "{D7EF5187-BBBB-4FA7-B722-0D60E3273B81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewProjectTemplate.Models", "InterviewProjectTemplate.Models\InterviewProjectTemplate.Models.csproj", "{D7EF5187-BBBB-4FA7-B722-0D60E3273B81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Repositories", "InterviewProjectTemplate.Repositories\InterviewProjectTemplate.Repositories.csproj", "{E1B76F90-5737-4D73-8DA6-38DD0D67751A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewProjectTemplate.Repositories", "InterviewProjectTemplate.Repositories\InterviewProjectTemplate.Repositories.csproj", "{E1B76F90-5737-4D73-8DA6-38DD0D67751A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Data", "InterviewProjectTemplate.Data\InterviewProjectTemplate.Data.csproj", "{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewProjectTemplate.Data", "InterviewProjectTemplate.Data\InterviewProjectTemplate.Data.csproj", "{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProjectTemplate.Services.Tests", "InterviewProjectTemplate.Services.Tests\InterviewProjectTemplate.Services.Tests.csproj", "{6F550448-3AAF-47BA-9487-1ACB985BFF2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E675EE9-7984-4EBA-8B5A-6E8CF0D09D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F550448-3AAF-47BA-9487-1ACB985BFF2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F550448-3AAF-47BA-9487-1ACB985BFF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F550448-3AAF-47BA-9487-1ACB985BFF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F550448-3AAF-47BA-9487-1ACB985BFF2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

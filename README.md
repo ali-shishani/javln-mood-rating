@@ -26,7 +26,11 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [ ] TODO: TBD.
 
 # Screenshots
-<img width="952" alt="image" src="https://github.com/user-attachments/assets/9109cbae-abd6-4269-91c3-14919ee6fef4" />
+
+Record your mood every day:
+<img width="947" alt="image" src="https://github.com/user-attachments/assets/796c21a3-d9dd-434e-b8c0-5897b26bd1f7" />
+
+<img width="952" alt="image" src="https://github.com/user-attachments/assets/78d3c319-a166-4500-8d59-1de610a02990" />
 
 # InterviewProjectTemplate
 

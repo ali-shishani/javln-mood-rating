@@ -49,7 +49,7 @@ namespace InterviewProjectTemplate.Services.Tests.MooRatingServicedTests
             var containsDuplicates = result.MoodRatingOptions
                                     .Any(s => result.MoodRatingOptions.Count(x => x.Code == s.Code) > 1);
 
-            containsDuplicates.Should().Be(false);
+            containsDuplicates.Should().BeFalse();
         }
     }
 }

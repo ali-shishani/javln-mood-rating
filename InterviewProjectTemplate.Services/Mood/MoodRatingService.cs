@@ -40,7 +40,9 @@ namespace InterviewProjectTemplate.Services.Mood
             var errors = new List<Error>();
             var currentDateUtc = new DateTime(DateTime.UtcNow.Year, DateTime.UtcNow.Month, DateTime.UtcNow.Day);
 
-            var allMoodRatingRecords = await _moodRatingRepository.GetAllAsync();
+            var allMoodRatingRecords = _moodRatingRepository.GetAll();
+
+            var myList = allMoodRatingRecords.ToList();
 
             // only one record should exist per day
             var existingRecord = allMoodRatingRecords.FirstOrDefault(s => s.Email == request.Email && s.CreatedDateUtc == currentDateUtc);

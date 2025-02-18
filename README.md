@@ -25,6 +25,8 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [ ] Implement front-end admin view unit test.
 - [ ] TODO: TBD.
 
+# Screenshots
+<img width="952" alt="image" src="https://github.com/user-attachments/assets/9109cbae-abd6-4269-91c3-14919ee6fef4" />
 
 # InterviewProjectTemplate
 

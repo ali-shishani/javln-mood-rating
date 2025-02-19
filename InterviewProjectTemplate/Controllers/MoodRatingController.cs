@@ -9,7 +9,6 @@ using System.Net;
 
 namespace InterviewProjectTemplate.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MoodRatingController : ControllerBase
@@ -54,10 +53,11 @@ namespace InterviewProjectTemplate.Controllers
                 .Build();
         }
 
-        // TODO: implement logic
+        [Authorize]
         [HttpGet("GetMoodRatings")]
         public async Task<ApiResponse<GetMoodRatingOptionsResponse>> GetMoodRatings()
         {
+            // TODO: implement logic
             _logger.LogInformation("Admin is trying to record the mood rating");
             var (result, errors) = await _moodRatingService.GetMoodRatingOptions();
 

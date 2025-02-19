@@ -31,18 +31,10 @@ namespace InterviewProjectTemplate
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // TODO: implement config
-            //var provider = services.BuildServiceProvider();
-
             // Add services to the container.
             services.AddSingleton<IAppConfigurationProvider, AppConfigurationProvider>();
             services.AddScoped<MoodRatingDbContext>();
             services.AddDbContext<MoodRatingDbContext>();
-
-            // add identity core
-            services.AddIdentityCore<ApplicationUser>()
-                .AddEntityFrameworkStores<MoodRatingDbContext>()
-                .AddApiEndpoints();
 
             services.AddCustomIdentity(Configuration, _hostEnv);
 

@@ -8,17 +8,28 @@ using System.Threading.Tasks;
 
 namespace InterviewProjectTemplate.Data.Identity
 {
-    public interface IEmailSender
-    {
-        Task SendEmailAsync(
-          string email, string subject, string message);
-    }
+    //public interface IEmailSender
+    //{
+    //    Task SendEmailAsync(
+    //      string email, string subject, string message);
+    //}
 
-    public class CustomEmailSender : IEmailSender
+    public class CustomEmailSender : IEmailSender<ApplicationUser>
     {
-        public Task SendEmailAsync(string email, string subject, string message)
+        public async Task SendConfirmationLinkAsync(ApplicationUser user, string email, string confirmationLink)
         {
-            return Task.CompletedTask;
+        }
+
+        public async Task SendEmailAsync(string email, string subject, string message)
+        {
+        }
+
+        public async Task SendPasswordResetCodeAsync(ApplicationUser user, string email, string resetCode)
+        {
+        }
+
+        public async Task SendPasswordResetLinkAsync(ApplicationUser user, string email, string resetLink)
+        {
         }
     }
 }

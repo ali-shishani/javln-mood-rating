@@ -8,6 +8,9 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatInputModule} from '@angular/material/input'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
+import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -28,9 +31,11 @@ import { LayoutModule } from './layout/layout.module';
     MatButtonModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // ApiAuthorizationModule
   ],
   providers: [],
+  // providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -30,7 +30,7 @@ namespace InterviewProjectTemplate.Data.Identity
         private readonly ILogger<AccountService> _logger;
 
         private readonly IAccountSignInService _accountSignInService;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailSender<ApplicationUser> _emailSender;
 
 
         public int DefaultLimit { get; set; } = 10;
@@ -41,7 +41,7 @@ namespace InterviewProjectTemplate.Data.Identity
             //IdentityContext identityDbContext,
             MoodRatingDbContext identityDbContext,
             MoodRatingDbContext dbContext,
-            IEmailSender emailSender,
+            IEmailSender<ApplicationUser> emailSender,
             ILogger<AccountService> logger
             )
         {

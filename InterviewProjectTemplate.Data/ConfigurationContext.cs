@@ -1,0 +1,55 @@
+﻿using Duende.IdentityServer.EntityFramework.Entities;
+using Duende.IdentityServer.EntityFramework.Interfaces;
+using InterviewProjectTemplate.Config.Provider;
+using InterviewProjectTemplate.Data.Entity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterviewProjectTemplate.Data
+{
+    public class ConfigurationContext : IdentityDbContext<
+    ApplicationUser, ApplicationRole, Guid,
+    ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin,
+    ApplicationRoleClaim, ApplicationUserToken>, IConfigurationDbContext
+    {
+        static string connectionString = "";
+        private readonly IAppConfigurationProvider _appConfigurationProvider;
+
+        public ConfigurationContext(IAppConfigurationProvider appConfigurationProvider) : base()
+        {
+            _appConfigurationProvider = appConfigurationProvider;
+            connectionString = _appConfigurationProvider.GetConnectionString();
+        }
+
+        // add your entities here
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<ClientCorsOrigin> ClientCorsOrigins { get; set; }
+        public DbSet<IdentityResource> IdentityResources { get; set; }
+        public DbSet<ApiResource> ApiResources { get; set; }
+        public DbSet<ApiScope> ApiScopes { get; set; }
+        public DbSet<IdentityProvider> IdentityProviders { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySQL(connectionString, mySqlOptions =>
+            {
+                // TODO: wire these options in appsettings.json
+                mySqlOptions.EnableRetryOnFailure(
+                    maxRetryCount: 5,  // Adjust the maximum number of retry attempts as needed
+                    maxRetryDelay: TimeSpan.FromSeconds(30),  // Adjust the maximum delay between retries as needed
+                    errorNumbersToAdd: null);
+            });
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+    }
+}

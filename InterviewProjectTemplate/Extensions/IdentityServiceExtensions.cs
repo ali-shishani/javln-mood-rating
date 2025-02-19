@@ -39,7 +39,9 @@ namespace InterviewProjectTemplate.Extensions
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IAuthenticatedAccountService, AuthenticatedAccountService>();
             services.AddTransient<IUserAccountService, UserAccountService>();
+
             services.AddTransient<IEmailSender, CustomEmailSender>();
+            services.AddTransient<RoleManager<ApplicationRole>>();
 
             var conn = configuration.GetConnectionString(IdentityConnectionStringKey);
 

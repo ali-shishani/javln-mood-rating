@@ -35,7 +35,7 @@ namespace InterviewProjectTemplate
                 try
                 {
                     logger.LogInformation("Start Seeding Data");
-                    //SeedData.Seed(services, hostEnv.EnvironmentName);
+                    SeedData.Seed(services, hostEnv.EnvironmentName);
                     logger.LogInformation("Seeding of Data Completed");
                 }
                 catch (Exception ex)

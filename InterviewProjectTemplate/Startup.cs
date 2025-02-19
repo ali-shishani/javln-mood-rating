@@ -38,20 +38,15 @@ namespace InterviewProjectTemplate
             services.AddScoped<MoodRatingDbContext>();
             services.AddDbContext<MoodRatingDbContext>();
 
-            // add authenication
-            services.AddAuthentication()
-                .AddCookie(IdentityConstants.ApplicationScheme)
-                .AddBearerToken(IdentityConstants.BearerScheme);
-
-            // add authorisation
-            services.AddAuthorization();
-
             // add identity core
             services.AddIdentityCore<ApplicationUser>()
                 .AddEntityFrameworkStores<MoodRatingDbContext>()
                 .AddApiEndpoints();
 
-            //services.AddCustomIdentity(Configuration, _hostEnv);
+            services.AddCustomIdentity(Configuration, _hostEnv);
+
+            // add authorisation
+            services.AddAuthorization();
 
             // TODO: implement logic
             //services.AddRelmsAuthorizationHandlers();

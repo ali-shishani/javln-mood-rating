@@ -18,8 +18,11 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [x] Implement back-end unit test - Mood Rating Recording.
 - [x] Implement front-end unit test - Mood Rating Recording.
 - [x] Implement seeding for user,roles, claims...etc
+- [x] Implement Optional Authentication in back-end using .Net Core Identity
+- [ ] Implement Authentication in front-end
+- [ ] Setup front-end app to start in https to allow admin login securely.
 - [ ] Implement Login - this is to prepare for the admin user access.
-- [ ] Customise front-end routing for admin and create an initial landing page.
+- [ ] Customise front-end routing for admin and create an initial landing page - the routing will check if the user is logged-in, then it will direct to admin view-records component.
 - [ ] Implement back-end Mood Rating Controller Action to retriev Mood Rating Records - sorted by most recent.
 - [ ] Implement back-end unit test - admin should be able to retrieve the records sorted by most recent.
 - [ ] Implement front-end admin view UI design.

@@ -17,7 +17,7 @@ This is a message from me to help you keep tracking of the progress. The list be
 - [x] Implement back-end logic to store user's mood rating. Also add validation to prevent multiple submit actions in the same day.
 - [x] Implement back-end unit test - Mood Rating Recording.
 - [x] Implement front-end unit test - Mood Rating Recording.
-- [ ] Implement seeding for user,roles, claims...etc
+- [x] Implement seeding for user,roles, claims...etc
 - [ ] Implement Login - this is to prepare for the admin user access.
 - [ ] Customise front-end routing for admin and create an initial landing page.
 - [ ] Implement back-end Mood Rating Controller Action to retriev Mood Rating Records - sorted by most recent.

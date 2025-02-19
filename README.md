@@ -29,6 +29,7 @@ This is a message from me to help you keep tracking of the progress. The list be
 # Screenshots
 
 Record your mood every day:
+
 <img width="947" alt="image" src="https://github.com/user-attachments/assets/796c21a3-d9dd-434e-b8c0-5897b26bd1f7" />
 
 <img width="952" alt="image" src="https://github.com/user-attachments/assets/78d3c319-a166-4500-8d59-1de610a02990" />
@@ -56,3 +57,11 @@ A blank MySQL database is included inside the container, and will start up when 
 ## Frontend
 
 The frontend will be run on `http://localhost:4200`. When making API calls to the backend, please ensure that `environment.apiUrl` is used for the URL, rather than hardcoding the value. This will ensure that we can easily re-configure the URL if needed for deployment.
+
+
+# Before you run the app locally
+- When you run the app for the first time, this will creat seed data of the admin user. The admin user name is "admin" and the password is "Password123$".
+- You may need to run migration. This will make sure that the database is up to date. You can do so by running the command of update-database in the console.
+  
+  <img width="577" alt="image" src="https://github.com/user-attachments/assets/30e7a977-3153-41df-b69b-fbeee91f5266" />
+

@@ -1,4 +1,5 @@
-﻿using InterviewProjectTemplate.Config.Provider;
+﻿using InterviewProjectTemplate.AuthHandler;
+using InterviewProjectTemplate.Config.Provider;
 using InterviewProjectTemplate.Data;
 using InterviewProjectTemplate.Data.Entity;
 using InterviewProjectTemplate.Data.Identity;
@@ -47,9 +48,7 @@ namespace InterviewProjectTemplate
 
             // add authorisation
             services.AddAuthorization();
-
-            // TODO: implement logic
-            //services.AddRelmsAuthorizationHandlers();
+            services.AddAuthorizationHandlers();
             services.AddAuthenticatedUserProvider();
 
             services.AddCors(o => o.AddDefaultPolicy(builder =>

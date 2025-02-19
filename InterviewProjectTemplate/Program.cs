@@ -56,7 +56,6 @@ namespace InterviewProjectTemplate
 
             app.UseCors();
 
-            //app.UseAuthorization(); TODO: clean-up / this is moved to startup.
             app.MapIdentityApi<ApplicationUser>();
 
             app.MapControllers();

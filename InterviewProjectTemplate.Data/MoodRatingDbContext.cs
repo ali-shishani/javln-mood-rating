@@ -26,6 +26,7 @@ namespace InterviewProjectTemplate.Data
         }
 
         // add your entities here
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<MoodRatingRecord> MoodRatingRecords { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

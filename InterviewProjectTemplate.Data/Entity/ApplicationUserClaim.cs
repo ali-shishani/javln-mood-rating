@@ -10,6 +10,5 @@ namespace InterviewProjectTemplate.Data.Entity
 {
     public class ApplicationUserClaim : IdentityUserClaim<Guid>
     {
-        public Guid Id { get; set; }
     }
 }

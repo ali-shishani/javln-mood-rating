@@ -10,6 +10,6 @@ namespace InterviewProjectTemplate.Data.Entity
 {
     public class ApplicationUser : IdentityUser<Guid>
     {
-        public Guid Id { get; set; }
+        public ICollection<ApplicationUserRole> UserRole { get; set; }
     }
 }

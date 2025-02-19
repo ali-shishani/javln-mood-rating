@@ -10,6 +10,5 @@ namespace InterviewProjectTemplate.Data.Entity
 {
     public class ApplicationUserLogin : IdentityUserLogin<Guid>
     {
-        public Guid Id { get; set; }
     }
 }

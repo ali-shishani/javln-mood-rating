@@ -1,9 +1,12 @@
 ﻿using InterviewProjectTemplate.Config.Provider;
 using InterviewProjectTemplate.Data;
 using InterviewProjectTemplate.Data.Entity;
+using InterviewProjectTemplate.Data.Identity;
+using InterviewProjectTemplate.Extensions;
 using InterviewProjectTemplate.Repositories;
 using InterviewProjectTemplate.Services.Mood;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Configuration;
 
 namespace InterviewProjectTemplate
@@ -47,6 +50,12 @@ namespace InterviewProjectTemplate
             services.AddIdentityCore<ApplicationUser>()
                 .AddEntityFrameworkStores<MoodRatingDbContext>()
                 .AddApiEndpoints();
+
+            //services.AddCustomIdentity(Configuration, _hostEnv);
+
+            // TODO: implement logic
+            //services.AddRelmsAuthorizationHandlers();
+            services.AddAuthenticatedUserProvider();
 
             services.AddCors(o => o.AddDefaultPolicy(builder =>
                 builder.AllowAnyOrigin()

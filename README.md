@@ -1,6 +1,8 @@
-Good day :)
+Good day!
 
-This is a message from me to help you keep tracking of the progress. The list below represents the planned tasks until reaching MVP.
+This is a message from me to help you keep tracking of the progress.
+To organise the work and plan it properly, I prepared a list of sub-tasks ordered according to priority. The tasks I completed are marked by [x]. If you pull latest of the repo, the implementation will include a running front and back ends of all the ticked items.
+I hope I could allocate more time during the 7 days of the task. I hope you like my solution :)
 - [x] Update Angular from 15 to 18.
 - [x] Add front-end routing, layout, and home.
 - [x] Implement front-end HttpClient/requests/url and wire it to configurations.
